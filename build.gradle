@@ -1,0 +1,25 @@
+group 'com'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+project.ext {
+    junitVersion = '4.12'
+}
+
+dependencies {
+    testCompile 'junit:junit:' + junitVersion
+    compile group: 'io.appium', name: 'java-client', version: '4.1.1'
+    compile group: 'net.lightbody.bmp', name: 'browsermob-proxy', version: '2.1.2', ext: 'pom'
+    compile group: 'net.lightbody.bmp', name: 'browsermob-core', version: '2.1.2'
+
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}

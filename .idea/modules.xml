@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WAATForMobile.iml" filepath="$PROJECT_DIR$/.idea/modules/WAATForMobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WAATForMobile_main.iml" filepath="$PROJECT_DIR$/.idea/modules/WAATForMobile_main.iml" group="WAATForMobile" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WAATForMobile_test.iml" filepath="$PROJECT_DIR$/.idea/modules/WAATForMobile_test.iml" group="WAATForMobile" />
+    </modules>
+  </component>
+</project>

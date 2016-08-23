@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="VerifyWebAnalyticsForMobile" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-08-23T17:30:19" hostname="inblr-gshilpa.local" time="70.531">
+  <properties/>
+  <testcase name="homePageLoadsSuccessfully" classname="VerifyWebAnalyticsForMobile" time="70.531"/>
+  <system-out><![CDATA[########################### Initializing the appium server at port 7000 ###########################
+[Appium] Welcome to Appium v1.5.3 (REV b630ab3d1717c1a436610a1542c71ebaadcf3bc0)
+[Appium] Non-default server args:
+[Appium]   port: 7000
+[Appium] Appium REST http interface listener started on 0.0.0.0:7000
+[HTTP] --> GET /wd/hub/status {}
+[MJSONWP] Calling AppiumDriver.getStatus() with args: []
+[MJSONWP] Responding to client with driver.getStatus() result: {"build":{"version":"1.5.3"...
+[HTTP] <-- GET /wd/hub/status 200 18 ms - 121 
+[HTTP] --> GET /wd/hub/status {}
+[MJSONWP] Calling AppiumDriver.getStatus() with args: []
+[MJSONWP] Responding to client with driver.getStatus() result: {"build":{"version":"1.5.3"...
+[HTTP] <-- GET /wd/hub/status 200 10 ms - 121 
+[HTTP] --> POST /wd/hub/session {"desiredCapabilities":{"proxy":{"proxyAutoconfigUrl":null,"autodetect":false,"socksUsername":null,"socksPassword":null,"httpProxy":"inblr-gshilpa.local:5555","proxyType":"MANUAL","noProxy":null,"ftpProxy":null,"socksProxy":null,"hCode":1728062666,"class":"org.openqa.selenium.Proxy","sslProxy":"inblr-gshilpa.local:5555"},"browserName":"Browser","avdLaunchTimeout":500000,"platformName":"Android","deviceName":"AndroidEmulator"}}
+[MJSONWP] Calling AppiumDriver.createSession() with args: [{"proxy":{"proxyAutoconfig...
+[Appium] Creating new AndroidDriver session
+[Appium] Capabilities:
+[Appium]   proxy: { proxyAutoconfigUrl: null,
+  autodetect: false,
+  socksUsername: null,
+  socksPassword: null,
+  httpProxy: 'inblr-gshilpa.local:5555',
+  proxyType: 'MANUAL',
+  noProxy: null,
+  ftpProxy: null,
+  socksProxy: null,
+  hCode: 1728062666,
+  class: 'org.openqa.selenium.Proxy',
+  sslProxy: 'inblr-gshilpa.local:5555' }
+[Appium]   browserName: 'Browser'
+[Appium]   avdLaunchTimeout: 500000
+[Appium]   platformName: 'Android'
+[Appium]   deviceName: 'AndroidEmulator'
+[BaseDriver] The following capabilities were provided, but are not recognized by appium: proxy.
+[BaseDriver] Session created with session id: 5021db46-da9a-4304-8514-8053d16a35f0
+[debug] [AndroidDriver] Getting Java version
+[AndroidDriver] Java version is: 1.8.0_91
+[AndroidDriver] We're going to run a Chrome-based session
+[AndroidDriver] Chrome-type package and activity are com.android.browser and com.android.browser.BrowserActivity
+[ADB] Checking whether adb is present
+[ADB] Using adb from /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb
+[AndroidDriver] Retrieving device list
+[debug] [ADB] Trying to find a connected android device
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[AndroidDriver] Using device: 192.168.56.101:5555
+[ADB] Checking whether adb is present
+[ADB] Using adb from /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb
+[debug] [ADB] Setting device id to 192.168.56.101:5555
+[AndroidDriver] App file was not listed, instead we're going to run com.android.browser directly on the device
+[debug] [AndroidDriver] Checking whether package is present on the device
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb with args: ["-P",5037,"-s","192.168.56.101:5555","shell","pm","list","packages","com.android.browser"]
+[AndroidDriver] Starting Android session
+[debug] [ADB] Running /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb with args: ["-P",5037,"-s","192.168.56.101:5555","wait-for-device"]
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb with args: ["-P",5037,"-s","192.168.56.101:5555","shell","echo","ping"]
+[debug] [Logcat] Starting logcat capture
+[debug] [AndroidDriver] Pushing settings apk to device...
+[debug] [ADB] Running /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb with args: ["-P",5037,"-s","192.168.56.101:5555","install","/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/node_modules/io.appium.settings/bin/settings_apk-debug.apk"]
+[debug] [AndroidDriver] Pushing unlock helper app to device...
+[debug] [ADB] Running /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb with args: ["-P",5037,"-s","192.168.56.101:5555","install","/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/node_modules/appium-unlock/bin/unlock_apk-debug.apk"]
+[ADB] Getting device platform version
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb with args: ["-P",5037,"-s","192.168.56.101:5555","shell","getprop","ro.build.version.release"]
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb with args: ["-P",5037,"-s","192.168.56.101:5555","shell","dumpsys","window"]
+[AndroidDriver] Screen already unlocked, doing nothing
+[debug] [AndroidBootstrap] Watching for bootstrap disconnect
+[debug] [ADB] Forwarding system: 4724 to device: 4724
+[debug] [ADB] Running /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb with args: ["-P",5037,"-s","192.168.56.101:5555","forward","tcp:4724","tcp:4724"]
+[debug] [UiAutomator] Starting UiAutomator
+[debug] [UiAutomator] Moving to state 'starting'
+[debug] [UiAutomator] Parsing uiautomator jar
+[debug] [UiAutomator] Found jar name: 'AppiumBootstrap.jar'
+[debug] [ADB] Running /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb with args: ["-P",5037,"-s","192.168.56.101:5555","push","/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/node_modules/appium-android-bootstrap/bootstrap/bin/AppiumBootstrap.jar","/data/local/tmp/"]
+[debug] [ADB] Attempting to kill all uiautomator processes
+[debug] [ADB] Getting all processes with uiautomator
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb with args: ["-P",5037,"-s","192.168.56.101:5555","shell","ps","uiautomator"]
+[ADB] No uiautomator process found to kill, continuing...
+[debug] [UiAutomator] Starting UIAutomator
+[debug] [ADB] Creating ADB subprocess with args: -P, 5037, -s, 192.168.56.101:5555, shell, uiautomator, runtest, AppiumBootstrap.jar, -c, io.appium.android.bootstrap.Bootstrap, -e, pkg, com.android.browser, -e, disableAndroidWatchers, false, -e, acceptSslCerts, false
+[debug] [UiAutomator] Moving to state 'online'
+[AndroidBootstrap] [BOOTSTRAP LOG] [debug] json loading complete.
+[AndroidBootstrap] [BOOTSTRAP LOG] [debug] Registered crash watchers.
+[AndroidBootstrap] Android bootstrap socket is now connected
+[AndroidDriver] Starting a chrome-based browser session
+[debug] [Chromedriver] Changed state to 'starting'
+[AndroidBootstrap] [BOOTSTRAP LOG] [debug] Client connected
+[Chromedriver] Set chromedriver binary as: /usr/local/lib/node_modules/appium/node_modules/appium-android-driver/node_modules/appium-chromedriver/chromedriver/mac/chromedriver
+[Chromedriver] Killing any old chromedrivers, running: pkill -15 -f "/usr/local/lib/node_modules/appium/node_modules/appium-android-driver/node_modules/appium-chromedriver/chromedriver/mac/chromedriver.*--port=9515"
+[Chromedriver] No old chromedrivers seemed to exist
+[Chromedriver] Spawning chromedriver with: /usr/local/lib/node_modules/appium/node_modules/appium-android-driver/node_modules/appium-chromedriver/chromedriver/mac/chromedriver --url-base=wd/hub --port=9515 --adb-port=5037
+[Chromedriver] [STDOUT] Starting ChromeDriver 2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4) on port 9515
+Only local connections are allowed.
+[JSONWP Proxy] Proxying [GET /status] to [GET http://127.0.0.1:9515/wd/hub/status] with no body
+[JSONWP Proxy] Got response with status 200: "{\"sessionId\":\"\",\"stat...
+[JSONWP Proxy] Proxying [POST /session] to [POST http://127.0.0.1:9515/wd/hub/session] with body: {"desiredCapabilities":{"ch...
+[JSONWP Proxy] Got response with status 200: {"sessionId":"24524ae3b8f8e...
+[debug] [Chromedriver] Changed state to 'online'
+[Appium] New AndroidDriver session created successfully, session 5021db46-da9a-4304-8514-8053d16a35f0 added to master session list
+[MJSONWP] Responding to client with driver.createSession() result: {"platform":"LINUX","webSto...
+[HTTP] <-- POST /wd/hub/session 200 5524 ms - 1152 
+[HTTP] --> POST /wd/hub/session/5021db46-da9a-4304-8514-8053d16a35f0/url {"url":"http://essenceoftesting.blogspot.com"}
+[MJSONWP] Driver proxy active, passing request on via HTTP proxy
+[JSONWP Proxy] Proxying [POST /wd/hub/session/5021db46-da9a-4304-8514-8053d16a35f0/url] to [POST http://127.0.0.1:9515/wd/hub/session/24524ae3b8f8eb8241956214bec4a5a0/url] with body: {"url":"http://essenceoftes...
+[JSONWP Proxy] Got response with status 200: {"sessionId":"24524ae3b8f8e...
+[JSONWP Proxy] Replacing sessionId 24524ae3b8f8eb8241956214bec4a5a0 with 5021db46-da9a-4304-8514-8053d16a35f0
+[HTTP] <-- POST /wd/hub/session/5021db46-da9a-4304-8514-8053d16a35f0/url 200 57207 ms - 76 
+[HTTP] --> POST /wd/hub/session/5021db46-da9a-4304-8514-8053d16a35f0/timeouts {"type":"implicit","ms":180000}
+[MJSONWP] Driver proxy active, passing request on via HTTP proxy
+[JSONWP Proxy] Proxying [POST /wd/hub/session/5021db46-da9a-4304-8514-8053d16a35f0/timeouts] to [POST http://127.0.0.1:9515/wd/hub/session/24524ae3b8f8eb8241956214bec4a5a0/timeouts] with body: {"type":"implicit","ms":180...
+[JSONWP Proxy] Got response with status 200: {"sessionId":"24524ae3b8f8e...
+[JSONWP Proxy] Replacing sessionId 24524ae3b8f8eb8241956214bec4a5a0 with 5021db46-da9a-4304-8514-8053d16a35f0
+[HTTP] <-- POST /wd/hub/session/5021db46-da9a-4304-8514-8053d16a35f0/timeouts 200 5 ms - 76 
+########################### Logs net.lightbody.bmp.core.har.HarLog@3fa6fdf3###########################
+########################### Entries[net.lightbody.bmp.core.har.HarEntry@1e94abe8, net.lightbody.bmp.core.har.HarEntry@72678548, net.lightbody.bmp.core.har.HarEntry@10fc282d, net.lightbody.bmp.core.har.HarEntry@18bd06a4, net.lightbody.bmp.core.har.HarEntry@23cd25b0, net.lightbody.bmp.core.har.HarEntry@6dceb944, net.lightbody.bmp.core.har.HarEntry@1c825990, net.lightbody.bmp.core.har.HarEntry@6cfaf482, net.lightbody.bmp.core.har.HarEntry@26d0ac08, net.lightbody.bmp.core.har.HarEntry@3e4c350f, net.lightbody.bmp.core.har.HarEntry@300cb58f, net.lightbody.bmp.core.har.HarEntry@b6919e8, net.lightbody.bmp.core.har.HarEntry@287a5461, net.lightbody.bmp.core.har.HarEntry@7741f82c, net.lightbody.bmp.core.har.HarEntry@22348b86, net.lightbody.bmp.core.har.HarEntry@61517071, net.lightbody.bmp.core.har.HarEntry@1b72e966, net.lightbody.bmp.core.har.HarEntry@630af2bc, net.lightbody.bmp.core.har.HarEntry@65e43de0, net.lightbody.bmp.core.har.HarEntry@f5c1bd5, net.lightbody.bmp.core.har.HarEntry@3e9fa81, net.lightbody.bmp.core.har.HarEntry@37c26752, net.lightbody.bmp.core.har.HarEntry@738d5777, net.lightbody.bmp.core.har.HarEntry@1ce06860, net.lightbody.bmp.core.har.HarEntry@5011b48f, net.lightbody.bmp.core.har.HarEntry@74cdb128, net.lightbody.bmp.core.har.HarEntry@6de26629, net.lightbody.bmp.core.har.HarEntry@72dea09d, net.lightbody.bmp.core.har.HarEntry@2fb6c785, net.lightbody.bmp.core.har.HarEntry@36eb77aa, net.lightbody.bmp.core.har.HarEntry@48468c70, net.lightbody.bmp.core.har.HarEntry@4f9b17ad]###########################
+########################### https://www.google.com/webhp?client=android-google&source=android-home###########################
+########################### https://www.google.co.in/webhp?client=android-google&source=android-home&gws_rd=cr&ei=Roi8V7a6E4jGvgTg5LhI###########################
+########################### https://www.google.co.in/images/hpp/gsa_super_g-64.gif###########################
+########################### https://www.google.co.in/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png###########################
+########################### https://www.google.co.in/images/nav_logo242_hr.png###########################
+########################### https://www.google.co.in/xjs/_/js/k=xjs.qs.en.59v0lfEw2MY.O/m=sx,c,sb_mob,bct,cdos,elog,jsa,mbsf,r,hsm,qsm,d,csi/am=ANCWCRgOAGyQWMK-gBCgBA/rt=j/d=1/t=zcms/rs=ACT90oE53_2cMC6G0Glo8n5xomMXSMDd1A###########################
+########################### https://www.google.co.in/xjs/_/js/k=xjs.qs.en.59v0lfEw2MY.O/m=sy4,sy11,em0,sy10,aa,abd,sy46,sy45,sy44,sy48,em8,async,sy258,sy307,dvl,sy399,foot,ipv6,shm,sy103,sy53,sy64,sy95,sy332,mhp,sy74,sy481,qmp/am=ANCWCRgOAGyQWMK-gBCgBA/rt=j/d=0/t=zcms/rs=ACT90oE53_2cMC6G0Glo8n5xomMXSMDd1A###########################
+########################### https://www.google.co.in/gen_204?atyp=i&ct=14&cad=i&ogsr=1&id=19000275&ic=1&ogd=google.co.in&ogprm=up&vet=10ahUKEwiT7dmziNjOAhXKro8KHa_UAvsQjW0IAQ.R4i8V9OtJMrdvgSvqYvYDw.s&vis=1&ei=R4i8V9OtJMrdvgSvqYvYDw&zx=1471973449604###########################
+########################### https://www.google.co.in/gen_204?atyp=i&ct=14&cad=v&ogsr=1&id=19000275&ic=1&ogd=google.co.in&ogprm=up&ei=R4i8V9OtJMrdvgSvqYvYDw&zx=1471973452595###########################
+########################### https://www.google.com/webhp?client=android-google&source=android-home###########################
+########################### https://www.google.co.in/webhp?client=android-google&source=android-home&gws_rd=cr&ei=Woi8V6KTMof2vASs2IrAAw###########################
+########################### https://www.google.co.in/gen_204?atyp=i&ct=14&cad=i&ogsr=1&id=19000275&ic=2&ogd=google.co.in&ogprm=up&vet=10ahUKEwiG-IG9iNjOAhXBQo8KHeaoCXEQjW0IAQ.W4i8V8beB8GFvQTm0aaIBw.s&vis=1&ei=W4i8V8beB8GFvQTm0aaIBw&zx=1471973468699###########################
+########################### https://www.google.co.in/webhp?client=android-google&source=android-home&gws_rd=cr&ei=Roi8V7a6E4jGvgTg5LhI###########################
+########################### https://www.google.co.in/gen_204?atyp=i&ct=14&cad=i&ogsr=1&id=19000275&ic=3&ogd=google.co.in&ogprm=up&vet=10ahUKEwjbx-S9iNjOAhUDO48KHSEVDj8QjW0IAQ.XIi8V9upLYP2vAShqrj4Aw.s&vis=1&ei=XIi8V9upLYP2vAShqrj4Aw&zx=1471973469239###########################
+########################### https://www.google.com/webhp?client=android-google&source=android-home###########################
+########################### https://www.google.co.in/webhp?client=android-google&source=android-home&gws_rd=cr&ei=X4i8V9jJCIWSvQTu0L2QCg###########################
+########################### https://www.google.co.in/gen_204?atyp=i&ct=14&cad=i&ogsr=1&id=19000275&ic=4&ogd=google.co.in&ogprm=up&vet=10ahUKEwiEsq-_iNjOAhWJs48KHWvfBn0QjW0IAQ.YIi8V4SCBInnvgTrvpvoBw.s&vis=1&ei=YIi8V4SCBInnvgTrvpvoBw&zx=1471973472576###########################
+########################### https://www.google.co.in/webhp?client=android-google&source=android-home&gws_rd=cr&ei=Roi8V7a6E4jGvgTg5LhI###########################
+########################### https://www.google.co.in/gen_204?atyp=i&ct=14&cad=i&ogsr=1&id=19000275&ic=5&ogd=google.co.in&ogprm=up&vet=10ahUKEwi5mo7AiNjOAhUhSY8KHSLMDmkQjW0IAQ.YYi8V_nlJaGSvQSimLvIBg.s&vis=1&ei=YYi8V_nlJaGSvQSimLvIBg&zx=1471973474579###########################
+########################### https://www.google.com/webhp?client=android-google&source=android-home###########################
+########################### https://www.google.co.in/webhp?client=android-google&source=android-home&gws_rd=cr&ei=Y4i8V8vvEcGHvQSR54iQBA###########################
+########################### https://www.google.co.in/gen_204?atyp=i&ct=14&cad=i&ogsr=1&id=19000275&ic=6&ogd=google.co.in&ogprm=up&vet=10ahUKEwiGr5nBiNjOAhUHv48KHWZ5AvkQjW0IAQ.Y4i8V8bxNof-vgTm8onIDw.s&vis=1&ei=Y4i8V8bxNof-vgTm8onIDw&zx=1471973476674###########################
+########################### https://ssl.gstatic.com/gb/images/qi2_00ed8ca1.png###########################
+########################### https://www.gstatic.com/og/_/js/k=og.mob.en_US.S_7JalUrOzg.O/rt=j/m=md/exm=mih,mab,meb/d=1/ed=1/rs=AA2YrTtwes84xYyJe0HwPLRFnK_-WDpFJw###########################
+########################### https://www.google.co.in/gen_204?atyp=i&ct=14&cad=v&ogsr=1&id=19000275&ic=6&ogd=google.co.in&ogprm=up&ei=Y4i8V8bxNof-vgTm8onIDw&zx=1471973479759###########################
+########################### https://www.google.co.in/images/nav_logo242.png###########################
+########################### https://www.gstatic.com/og/_/ss/k=og.mob.1kzmh458rf5km.L.W.O/m=md/excm=mih,mab,meb/d=1/ed=1/rs=AA2YrTspncbaa0D2bsBLYwaT64H61K580A###########################
+########################### https://www.google.co.in/gen_204?v=3&s=mobilewebhp&atyp=csi&ei=Y4i8V8bxNof-vgTm8onIDw&imc=2&imn=2&imp=0&adh=&xjs=init.17.13.sb_mob.14.c.1.jsa.1.dvl.1.mbsf.0&ima=2&rt=xjsls.24,prt.26,iml.26,dcl.41,xjses.112,xjsee.205,xjs.205,ol.3424,aft.26,wsrt.1890,cst.0,dnst.0,rqst.192,rspt.39,rqstt.1437,unt.1283,cstt.1283,dit.1931###########################
+########################### https://www.google.co.in/images/branding/product/1x/gsa_shadowed_144dp.png###########################
+########################### http://essenceoftesting.blogspot.com/###########################
+########################### http://essenceoftesting.blogspot.in/?m=1###########################
+########################### https://www.google.co.in/webhp?client=android-google&source=android-home&gws_rd=cr&ei=Roi8V7a6E4jGvgTg5LhI###########################
+[HTTP] --> DELETE /wd/hub/session/5021db46-da9a-4304-8514-8053d16a35f0 {}
+[MJSONWP] Calling AppiumDriver.deleteSession() with args: ["5021db46-da9a-4304-8514-8...
+[debug] [AndroidDriver] Shutting down Android driver
+[debug] [AndroidDriver] Stopping chromedriver for context CHROMIUM
+[debug] [Chromedriver] Changed state to 'stopping'
+[JSONWP Proxy] Proxying [DELETE /] to [DELETE http://127.0.0.1:9515/wd/hub/session/24524ae3b8f8eb8241956214bec4a5a0] with no body
+[JSONWP Proxy] Got response with status 200: "{\"sessionId\":\"24524ae3b...
+[debug] [Chromedriver] Changed state to 'stopped'
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb with args: ["-P",5037,"-s","192.168.56.101:5555","shell","am","force-stop","io.appium.unlock"]
+[debug] [ADB] Pressing the HOME button
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb with args: ["-P",5037,"-s","192.168.56.101:5555","shell","input","keyevent",3]
+[debug] [Logcat] Stopping logcat capture
+[debug] [AndroidBootstrap] Sending command to android: {"cmd":"shutdown"}
+[AndroidBootstrap] [BOOTSTRAP LOG] [debug] Got data from client: {"cmd":"shutdown"}
+[AndroidBootstrap] [BOOTSTRAP LOG] [debug] Got command of type SHUTDOWN
+[AndroidBootstrap] [BOOTSTRAP LOG] [debug] Returning result: {"status":0,"value":"OK, shutting down"}
+[debug] [AndroidBootstrap] Received command result from bootstrap
+[debug] [UiAutomator] Shutting down UiAutomator
+[debug] [UiAutomator] Moving to state 'stopping'
+[AndroidBootstrap] [BOOTSTRAP LOG] [debug] Closed client connection
+[debug] [AndroidBootstrap] [UIAUTO STDOUT] INSTRUMENTATION_STATUS: numtests=1
+[debug] [AndroidBootstrap] [UIAUTO STDOUT] INSTRUMENTATION_STATUS: stream=.
+[debug] [AndroidBootstrap] [UIAUTO STDOUT] INSTRUMENTATION_STATUS: id=UiAutomatorTestRunner
+[debug] [AndroidBootstrap] [UIAUTO STDOUT] INSTRUMENTATION_STATUS: test=testRunServer
+[debug] [AndroidBootstrap] [UIAUTO STDOUT] INSTRUMENTATION_STATUS: class=io.appium.android.bootstrap.Bootstrap
+[debug] [AndroidBootstrap] [UIAUTO STDOUT] INSTRUMENTATION_STATUS: current=1
+[debug] [AndroidBootstrap] [UIAUTO STDOUT] INSTRUMENTATION_STATUS_CODE: 0
+[debug] [AndroidBootstrap] [UIAUTO STDOUT] INSTRUMENTATION_STATUS: stream=
+[debug] [AndroidBootstrap] [UIAUTO STDOUT] Test results for WatcherResultPrinter=.
+[debug] [AndroidBootstrap] [UIAUTO STDOUT] Time: 62.201
+[debug] [AndroidBootstrap] [UIAUTO STDOUT] OK (1 test)
+[debug] [UiAutomator] UiAutomator shut down normally
+[debug] [UiAutomator] Moving to state 'stopped'
+[debug] [ADB] Attempting to kill all uiautomator processes
+[debug] [ADB] Getting all processes with uiautomator
+[debug] [ADB] Getting connected devices...
+[debug] [ADB] 1 device(s) connected
+[debug] [ADB] Running /Users/gshilpa/Documents/android-sdk-macosx/platform-tools/adb with args: ["-P",5037,"-s","192.168.56.101:5555","shell","ps","uiautomator"]
+[ADB] No uiautomator process found to kill, continuing...
+[debug] [UiAutomator] Moving to state 'stopped'
+[Appium] Removing session 5021db46-da9a-4304-8514-8053d16a35f0 from our master session list
+[debug] [MJSONWP] Received response: null
+[debug] [MJSONWP] But deleting session, so not returning
+[MJSONWP] Responding to client with driver.deleteSession() result: null
+[HTTP] <-- DELETE /wd/hub/session/5021db46-da9a-4304-8514-8053d16a35f0 200 1166 ms - 76 
+]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+</testsuite>
