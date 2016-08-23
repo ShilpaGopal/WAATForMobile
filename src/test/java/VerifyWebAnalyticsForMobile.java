@@ -1,3 +1,4 @@
+import Utilities.PrintMsg;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -15,7 +16,9 @@ import net.lightbody.bmp.core.har.HarLog;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Proxy;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
@@ -24,6 +27,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -38,6 +42,7 @@ public class VerifyWebAnalyticsForMobile {
     protected static IOSDriver<MobileElement> driveriOS;
     protected static AndroidDriver<MobileElement> driverAndroid;
     String baseUrl="http://essenceoftesting.blogspot.com";
+    String navigateToURL = baseUrl + "/search/label/waat";
     BrowserMobProxy server;
 
     @Before
@@ -49,7 +54,9 @@ public class VerifyWebAnalyticsForMobile {
 
         input= new FileInputStream("config.properties");
         prop.load(input);
-        System.out.println("########################### Initializing the appium server at port 7000 ###########################");
+
+        PrintMsg.info("Initializing the appium server at port 7000");
+
 
         serBuilder=new AppiumServiceBuilder().withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js")).usingPort(7000);
         service = serBuilder.build();
@@ -84,7 +91,6 @@ public class VerifyWebAnalyticsForMobile {
     @After
     public void tearDown()
     {
-
         driverAndroid.quit();
         server.stop();
     }
@@ -93,17 +99,19 @@ public class VerifyWebAnalyticsForMobile {
     public void homePageLoadsSuccessfully() throws Throwable {
 
         driverAndroid.get(baseUrl);
-        driverAndroid.manage().timeouts().implicitlyWait(180, TimeUnit.SECONDS);
         Har har = server.getHar();
         HarLog log = har.getLog();
-        System.out.println("########################### Logs "+log+"###########################");
         List<HarEntry> entries = new CopyOnWriteArrayList<HarEntry>(log.getEntries());
-        System.out.println("########################### Entries"+entries+"###########################");
+        PrintMsg.lineSeparator();
         for (HarEntry entry : entries){
-            System.out.println("########################### "+entry.getRequest().getUrl()+"###########################");
+            System.out.println(entry.getRequest().getUrl());
         }
+        PrintMsg.lineSeparator();
 
 
+
+        driverAndroid.get(navigateToURL);
+        Thread.sleep(3000);
     }
 
 }
