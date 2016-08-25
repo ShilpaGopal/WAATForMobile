@@ -13,12 +13,14 @@ import net.lightbody.bmp.client.ClientUtil;
 import net.lightbody.bmp.core.har.Har;
 import net.lightbody.bmp.core.har.HarEntry;
 import net.lightbody.bmp.core.har.HarLog;
+import net.sf.uadetector.internal.data.domain.Browser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
@@ -42,6 +44,7 @@ public class VerifyWebAnalyticsForMobile {
     protected static IOSDriver<MobileElement> driveriOS;
     protected static AndroidDriver<MobileElement> driverAndroid;
     String baseUrl="http://essenceoftesting.blogspot.com";
+    //String baseUrl="https://www.thoughtworks.com/mingle/docs/mingle_tips_and_tricks.html";
     String navigateToURL = baseUrl + "/search/label/waat";
     BrowserMobProxy server;
 
@@ -51,13 +54,9 @@ public class VerifyWebAnalyticsForMobile {
         server = new BrowserMobProxyServer();
         server.start(5555);
         Proxy proxy = ClientUtil.createSeleniumProxy(server);
-
         input= new FileInputStream("config.properties");
         prop.load(input);
-
         PrintMsg.info("Initializing the appium server at port 7000");
-
-
         serBuilder=new AppiumServiceBuilder().withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js")).usingPort(7000);
         service = serBuilder.build();
         service.start();
@@ -66,10 +65,17 @@ public class VerifyWebAnalyticsForMobile {
             throw new RuntimeException("Unable to start Appium node server");
         }
 
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, prop.getProperty("BROWSER_NAME"));
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("DEVICE_NAME"));
+        capabilities.setCapability(MobileCapabilityType.ACCEPT_SSL_CERTS, true);
         capabilities.setCapability(CapabilityType.PROXY, proxy);
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("ignore-certificate-errors");
+        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+
+        
 
 
         server.newHar("newHar");
@@ -99,6 +105,7 @@ public class VerifyWebAnalyticsForMobile {
     public void homePageLoadsSuccessfully() throws Throwable {
 
         driverAndroid.get(baseUrl);
+        driverAndroid.get(navigateToURL);
         Har har = server.getHar();
         HarLog log = har.getLog();
         List<HarEntry> entries = new CopyOnWriteArrayList<HarEntry>(log.getEntries());
@@ -107,9 +114,6 @@ public class VerifyWebAnalyticsForMobile {
             System.out.println(entry.getRequest().getUrl());
         }
         PrintMsg.lineSeparator();
-
-
-
         driverAndroid.get(navigateToURL);
         Thread.sleep(3000);
     }
