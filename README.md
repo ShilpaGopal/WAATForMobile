@@ -1,4 +1,4 @@
-WAAT FOR Mobile:
+**WAAT FOR Mobile**
 WAAT- WebAnalytic Automation Testing
 
 Mobile analytics is generally split between mobile web and mobile apps. Mobile web refers to when individuals use their smartphones or tablets to view online content via a mobile browser. 
