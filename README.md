@@ -57,6 +57,6 @@ Mobile analytics is generally split between mobile web and mobile apps. Mobil
 
 * Start capturing the Web analytics data by executing 
 
-		**Gradle build**
+		Gradle build
 	
-		**Gradle test**
+		Gradle test
