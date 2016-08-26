@@ -43,13 +43,13 @@ Mobile analytics is generally split between mobile web and mobile apps. Mobil
 * Connect your Android real device or any Emulator.
 
 * Set up the Proxy for device connected
-	* Click Settings.
-	* In Settings, click Wi-Fi.
-	* Click and hold WiredSSID until a box pops up.
-	* Click on "Modify network".
-	* Check the "Show advanced options" box and select Manual from the Proxy Settings menu.
-	* Enter your host machine's IP address in the "Proxy hostname" field, and 5555 in the "proxy port" 
-	* Then click Save.
+	* Click **Settings**.
+	* In Settings, click **Wi-Fi**.
+	* Click and hold **WiredSSID** until a box pops up.
+	* Click on **"Modify network"**.
+	* Check the **"Show advanced options"** box and select Manual from the Proxy Settings menu.
+	* Enter your host machine's IP address in the **"Proxy hostname"** field, and 5555 in the **"proxy port"**
+	* Then click **Save**.
 
 * Install Chrome browser on the device
 
@@ -57,6 +57,6 @@ Mobile analytics is generally split between mobile web and mobile apps. Mobil
 
 * Start capturing the Web analytics data by executing 
 
-		Gradle build 
+		**Gradle build**
 	
-		Gradle test
+		**Gradle test**
