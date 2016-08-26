@@ -1,4 +1,5 @@
 import Utilities.PrintMsg;
+import Utilities.BMProxyHandler;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -41,11 +42,11 @@ public class VerifyWebAnalyticsForMobile {
     private static AppiumServiceBuilder serBuilder;
     FileInputStream input;
     Properties prop=new Properties();
-    protected static IOSDriver<MobileElement> driveriOS;
     protected static AndroidDriver<MobileElement> driverAndroid;
-    String baseUrl="http://essenceoftesting.blogspot.com";
-    //String baseUrl="https://www.thoughtworks.com/mingle/docs/mingle_tips_and_tricks.html";
-    String navigateToURL = baseUrl + "/search/label/waat";
+    String baseURL = "https://www.thoughtworks.com";
+    String navigateToURL = baseURL + "/mingle/signup/";
+    String urlPattern="https://www.google-analytics.com/collect";
+
     BrowserMobProxy server;
 
     @Before
@@ -60,12 +61,9 @@ public class VerifyWebAnalyticsForMobile {
         serBuilder=new AppiumServiceBuilder().withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js")).usingPort(7000);
         service = serBuilder.build();
         service.start();
-
         if (service == null || !service.isRunning()) {
             throw new RuntimeException("Unable to start Appium node server");
         }
-
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, prop.getProperty("BROWSER_NAME"));
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("DEVICE_NAME"));
@@ -74,23 +72,14 @@ public class VerifyWebAnalyticsForMobile {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("ignore-certificate-errors");
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-
-        
-
-
-        server.newHar("newHar");
-
         if(prop.getProperty("PLATFORM_NAME").equalsIgnoreCase("Android"))
         {
             capabilities.setCapability(AndroidMobileCapabilityType.AVD_LAUNCH_TIMEOUT, 500000);
             driverAndroid= new AndroidDriver<>(service.getUrl(), capabilities);
+            driverAndroid.get(baseURL);
+        }
 
-        }
-        else if(prop.getProperty("PLATFORM_NAME").equalsIgnoreCase("iOS"))
-        {
-            capabilities.setCapability(IOSMobileCapabilityType.LAUNCH_TIMEOUT, 500000);
-            driveriOS = new IOSDriver<>(service.getUrl(), capabilities);
-        }
+        server.newHar("newHar");
     }
 
 
@@ -102,20 +91,17 @@ public class VerifyWebAnalyticsForMobile {
     }
 
     @Test
-    public void homePageLoadsSuccessfully() throws Throwable {
-
-        driverAndroid.get(baseUrl);
+    public void captureWebAnalyticsDataForAndroidMobile() throws Throwable {
         driverAndroid.get(navigateToURL);
-        Har har = server.getHar();
-        HarLog log = har.getLog();
-        List<HarEntry> entries = new CopyOnWriteArrayList<HarEntry>(log.getEntries());
-        PrintMsg.lineSeparator();
-        for (HarEntry entry : entries){
-            System.out.println(entry.getRequest().getUrl());
+        try{
+            PrintMsg.info("Waiting for page to load successfully");
+            Thread.sleep(10000);
+        }catch(Exception e)
+        {
+            System.out.println(e.getMessage());
         }
-        PrintMsg.lineSeparator();
-        driverAndroid.get(navigateToURL);
-        Thread.sleep(3000);
+        BMProxyHandler.captureTheNetworkTraffic(server);
+        BMProxyHandler.verifyAnalyticsForTheUrlPatter(urlPattern);
     }
 
 }
