@@ -53,7 +53,15 @@ Mobile analytics is generally split between mobile web and mobile apps. Mobil
 
 * Install Chrome browser on the device
 
-* Place your Tests under src/test/java –
+* In VerifyWebAnalyticsForMobile.java change the baseURL to site name for which you need to capture Analytics data. And also specify the Analytics urlPattern that you need to capture.
+
+		Eg. String baseURL = "https://www.thoughtworks.com";
+		
+		    String urlPattern="https://www.google-analytics.com/collect";
+		    
+		    String urlPattern="https://api.mixpanel.com/";
+		    
+		    String urlPattern="https://analytics.twitter.com/"
 
 * Start capturing the Web analytics data by executing 
 
