@@ -1,11 +1,11 @@
-#WAAT FOR Mobile
-##WAAT- WebAnalytic Automation Testing
+# WAAT FOR Mobile
+## WAAT- WebAnalytic Automation Testing
 
 Mobile analytics is generally split between mobile web and mobile apps. Mobile web refers to when individuals use their smartphones or tablets to view online content via a mobile browser.This project helps to capture and verify analytics data for Android WebApp(Chrome) using BrowserMobProxy .
 
-###How to use WAATForMobile.
+### How to use WAATForMobile.
 
-####Perquisites : 
+#### Perquisites : 
 
 * Appium should be installed.
 
